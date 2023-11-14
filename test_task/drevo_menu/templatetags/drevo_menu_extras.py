@@ -4,8 +4,7 @@ from drevo_menu.models import MenuDrevo
 
 register = template.Library()
 
-@register.inclusion_tag("drevo_menu/index.html")
-def draw_menu():
-    return { "all":
-        MenuDrevo.objects.all(),
-    }
+@register.simple_tag(takes_context=True)
+def draw_menu(context):
+    print(context['request'].path)
+    return  MenuDrevo.objects.all()
