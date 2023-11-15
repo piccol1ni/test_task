@@ -9,10 +9,8 @@
     <title>Drevo_Test</title>
 </head>
 <body>
-    {% draw_menu as menu%}
-    {% for one_menu in menu %}
-    <h1 class="wow">{{ one_menu.menu_title }} | {{ one_menu.get_parent }}</h1>
-    {% endfor %}
+
+    <h1 class="wow">{% draw_menu 'Hockey' %}</h1>
 
 
 
